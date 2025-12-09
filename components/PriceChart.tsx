@@ -99,7 +99,7 @@ export default function PriceChart() {
             mode: 'dark',
         },
         title: {
-            text: 'BTC/USD Real-time',
+            text: 'BTC Real-time',
             align: 'left',
             style: {
                 color: '#fff',
@@ -134,7 +134,7 @@ export default function PriceChart() {
                 style: {
                     colors: '#64748b'
                 },
-                formatter: (val) => '$' + val.toLocaleString(undefined, { maximumFractionDigits: 0 })
+                formatter: (val) => ' ' + val.toLocaleString(undefined, { maximumFractionDigits: 0 })
             }
         },
         grid: {
@@ -165,7 +165,7 @@ export default function PriceChart() {
                 format: 'dd MMM HH:mm'
             },
             y: {
-                formatter: (val) => '$' + val.toLocaleString()
+                formatter: (val) => ' ' + val.toLocaleString()
             }
         }
     }), [isPaused, handleZoom, handleReset]);
