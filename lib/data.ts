@@ -24,7 +24,8 @@ const generateInitialData = (count: number): PricePoint[] => {
     const now = Date.now();
 
     for (let i = count; i > 0; i--) {
-        const time = now - i * 60 * 90000; // 1 minute intervals
+        // 15-minute intervals going back from now (15 * 60 * 1000 = 900000ms)
+        const time = now - i * 15 * 60 * 1000;
         const volatility = price * 0.002;
         const change = (Math.random() - 0.5) * volatility;
 

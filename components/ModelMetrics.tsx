@@ -54,7 +54,7 @@ export default function ModelMetrics() {
                 >
                     <div className="text-slate-400 text-xs mb-1">MAE</div>
                     <div className="text-white font-mono font-bold text-lg">
-                        ${metrics.metrics.mae.toFixed(2)}
+                        {metrics.metrics.mae.toFixed(2)}
                     </div>
                 </motion.div>
 
@@ -66,7 +66,7 @@ export default function ModelMetrics() {
                 >
                     <div className="text-slate-400 text-xs mb-1">RMSE</div>
                     <div className="text-white font-mono font-bold text-lg">
-                        ${metrics.metrics.rmse.toFixed(2)}
+                        {metrics.metrics.rmse.toFixed(2)}
                     </div>
                 </motion.div>
 

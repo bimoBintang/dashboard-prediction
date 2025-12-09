@@ -143,7 +143,7 @@ export default function TechnicalIndicators() {
                     {latestData && (
                         <>
                             <div className="text-3xl font-bold text-blue-400 mb-1">
-                                ${latestData.sma_50.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                {latestData.sma_50.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                             </div>
                             <div className="text-xs text-slate-500">Moving Average</div>
                         </>
@@ -163,19 +163,19 @@ export default function TechnicalIndicators() {
                             <div className="flex justify-between text-sm">
                                 <span className="text-slate-500">Upper:</span>
                                 <span className="text-green-400 font-mono">
-                                    ${latestData.bollinger_upper.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                    {latestData.bollinger_upper.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                                 </span>
                             </div>
                             <div className="flex justify-between text-sm">
                                 <span className="text-slate-500">Lower:</span>
                                 <span className="text-red-400 font-mono">
-                                    ${latestData.bollinger_lower.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                    {latestData.bollinger_lower.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                                 </span>
                             </div>
                             <div className="flex justify-between text-sm pt-1 border-t border-slate-700">
                                 <span className="text-slate-500">Width:</span>
                                 <span className="text-white font-mono">
-                                    ${(latestData.bollinger_upper - latestData.bollinger_lower).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                    {(latestData.bollinger_upper - latestData.bollinger_lower).toLocaleString(undefined, { maximumFractionDigits: 0 })}
                                 </span>
                             </div>
                         </div>

@@ -54,7 +54,7 @@ export default function PredictionChart() {
         yaxis: {
             labels: {
                 style: { colors: '#64748b' },
-                formatter: (val) => '$' + val.toLocaleString(undefined, { maximumFractionDigits: 0 })
+                formatter: (val) => ' ' + val.toLocaleString(undefined, { maximumFractionDigits: 0 })
             }
         },
         grid: {
@@ -65,7 +65,7 @@ export default function PredictionChart() {
             theme: 'dark',
             x: { format: 'dd MMM yyyy' },
             y: {
-                formatter: (val) => val ? '$' + val.toLocaleString() : 'N/A'
+                formatter: (val) => val ? ' ' + val.toLocaleString() : 'N/A'
             }
         },
         annotations: {
@@ -159,19 +159,19 @@ export default function PredictionChart() {
                     <div className="text-center">
                         <div className="text-slate-400 text-xs mb-1">Tomorrow</div>
                         <div className="text-white font-mono font-bold">
-                            ${futurePredictions[0]?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                            {futurePredictions[0]?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                         </div>
                     </div>
                     <div className="text-center">
                         <div className="text-slate-400 text-xs mb-1">3 Days</div>
                         <div className="text-white font-mono font-bold">
-                            ${futurePredictions[2]?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                            {futurePredictions[2]?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                         </div>
                     </div>
                     <div className="text-center">
                         <div className="text-slate-400 text-xs mb-1">7 Days</div>
                         <div className="text-white font-mono font-bold">
-                            ${latestPrediction?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                            {latestPrediction?.predicted_price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                         </div>
                     </div>
                     <div className="text-center">

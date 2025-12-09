@@ -24,7 +24,8 @@ export default function PriceChart() {
             setData(prev => {
                 if (prev.length === 0) return prev;
                 const last = prev[prev.length - 1];
-                const newTime = last.time + 60 * 8000;
+                // Use real current time for new candles
+                const newTime = Date.now();
                 const volatility = last.close * 0.002;
                 const change = (Math.random() - 0.5) * volatility;
                 const price = last.close + change;
@@ -39,7 +40,7 @@ export default function PriceChart() {
 
                 return [...prev.slice(1), newPoint];
             });
-        }, 2000);
+        }, 15000); // Update every 15 seconds
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -171,7 +172,7 @@ export default function PriceChart() {
     }), [isPaused, handleZoom, handleReset]);
 
     const series = useMemo(() => [{
-        name: 'BTC/USD',
+        name: 'BTC',
         data: data.map(d => ({
             x: new Date(d.time),
             y: [d.open, d.high, d.low, d.close]
@@ -210,7 +211,7 @@ export default function PriceChart() {
                     <div className="text-right">
                         <span className="text-slate-400 mr-2">Current:</span>
                         <span className="text-white font-mono font-bold text-lg">
-                            ${data[data.length - 1]?.close.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            {data[data.length - 1]?.close.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                     </div>
                 )}
